@@ -10,10 +10,10 @@
 int binary_tree_balance(const binary_tree_t *tree)
 {
 
-	if (!tree)
-		return (0);
+    if (!tree)
+        return (0);
 
-	return (binary_tree_height(tree->left) - binary_tree_height(tree->right));
+    return (binary_tree_height(tree->left) - binary_tree_height(tree->right));
 
 }
 
@@ -24,18 +24,18 @@ int binary_tree_balance(const binary_tree_t *tree)
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t right = 0, left = 0;
+    size_t right = 0, left = 0;
 
-	if (!tree)
-		return (0);
+    if (!tree)
+        return (0);
 
-	right = binary_tree_height(tree->right);
-	left = binary_tree_height(tree->left);
+    right = binary_tree_height(tree->right);
+    left = binary_tree_height(tree->left);
 
-	if (right <= left)
-		return (left + 1);
+    if (right <= left)
+        return (left + 1);
 
-	else
-		return (right + 1);
+    else
+        return (right + 1);
 
 }

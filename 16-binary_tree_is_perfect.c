@@ -7,15 +7,15 @@
  */
 size_t binary_balance(const binary_tree_t *tree)
 {
-	size_t lh = 0, rh = 0;
+    size_t lh = 0, rh = 0;
 
-	if (!tree)
-		return (0);
+    if (!tree)
+        return (0);
 
-	lh = tree->left ? 1 + binary_balance(tree->left) : +1;
-	rh = tree->right ? 1 + binary_balance(tree->right) : +1;
+    lh = tree->left ? 1 + binary_balance(tree->left) : +1;
+    rh = tree->right ? 1 + binary_balance(tree->right) : +1;
 
-	return ((lh > rh) ? lh : rh);
+    return ((lh > rh) ? lh : rh);
 
 }
 
@@ -26,10 +26,10 @@ size_t binary_balance(const binary_tree_t *tree)
  */
 int balance(const binary_tree_t *tree)
 {
-	if (!tree)
-		return (0);
+    if (!tree)
+        return (0);
 
-	return (binary_balance(tree->left) - binary_balance(tree->right));
+    return (binary_balance(tree->left) - binary_balance(tree->right));
 }
 
 /**
@@ -39,20 +39,20 @@ int balance(const binary_tree_t *tree)
  */
 int tree_is_perfect(const binary_tree_t *tree)
 {
-	size_t lh = 0, rh = 0;
+    size_t lh = 0, rh = 0;
 
-	if (!tree->left && !tree->right)
-		return (1);
+    if (!tree->left && !tree->right)
+        return (1);
 
-	if (tree->left && tree->right)
-	{
-		lh = 1 + tree_is_perfect(tree->left);
-		rh = 1 + tree_is_perfect(tree->right);
-		if (rh == lh && lh && !balance(tree))
-			return (1);
-	}
+    if (tree->left && tree->right)
+    {
+        lh = 1 + tree_is_perfect(tree->left);
+        rh = 1 + tree_is_perfect(tree->right);
+        if (rh == lh && lh && !balance(tree))
+            return (1);
+    }
 
-	return (0);
+    return (0);
 }
 
 /**
@@ -62,11 +62,11 @@ int tree_is_perfect(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	if (!tree)
-		return (0);
+    if (!tree)
+        return (0);
 
-	if (tree_is_perfect(tree))
-		return (1);
+    if (tree_is_perfect(tree))
+        return (1);
 
-	return (0);
+    return (0);
 }

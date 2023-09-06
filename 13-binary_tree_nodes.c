@@ -7,14 +7,14 @@
  */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	size_t cuntnod = 0;
+    size_t cuntnod = 0;
 
-	if (!tree)
-		return (0);
+    if (!tree)
+        return (0);
 
-	cuntnod = (tree->left || tree->right) ? +1 : 0;
-	cuntnod += binary_tree_nodes(tree->left);
-	cuntnod += binary_tree_nodes(tree->right);
+    cuntnod = (tree->left || tree->right) ? +1 : 0;
+    cuntnod += binary_tree_nodes(tree->left);
+    cuntnod += binary_tree_nodes(tree->right);
 
-	return (cuntnod);
+    return (cuntnod);
 }
